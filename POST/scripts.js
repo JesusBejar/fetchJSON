@@ -16,9 +16,9 @@ async function sendAPost() {
             headers: {
                 "Content-Type":"application/json"
             },
-            body: {
+            body: JSON.stringify({
                 title: "post post post"
-            }
+            })
         })
         const post = await response.json()
         console.log(post)
