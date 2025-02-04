@@ -8,6 +8,7 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 // button elements
 const btn = document.querySelector("#button-one")
 const btn2 = document.querySelector("#button-two")
+const btn3 = document.querySelector("#button-three")
 // console.log('one')
 
 // buttons that fire functions
@@ -42,3 +43,19 @@ try {
     response.error(e)
 }
 }
+
+btn3.addEventListener("click", getAllComments)
+// get all comments
+async function getAllComments() {
+console.log('clicked')
+try {
+    // change url
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
+    const json = await response.json()
+    // change dot notation
+    const comment = await json.map(comment => comment.email)
+    console.log(comment)
+} catch (e) {
+    response.error(e)
+}
+} 
