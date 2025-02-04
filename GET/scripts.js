@@ -7,6 +7,7 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 
 // button elements
 const btn = document.querySelector("#button-one")
+const btn2 = document.querySelector("#button-two")
 // console.log('one')
 
 // buttons that fire functions
@@ -26,3 +27,18 @@ async function getAllPosts() {
 
 }
 // console.log('three')
+
+btn2.addEventListener("click", getAllNames)
+// gets all names of users 
+async function getAllNames() {
+console.log('clicked')
+try {
+    // change url
+    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+    const json = await response.json()
+    const user = await json.map(user => user.name)
+    console.log(user)
+} catch (e) {
+    response.error(e)
+}
+}
