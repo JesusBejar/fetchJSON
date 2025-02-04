@@ -4,7 +4,9 @@ localStorage.setItem('Name', 'Joe Momma')
 // sessionStorage.removeItem("Name")
 console.log(localStorage.getItem('Name'))
 // Cookies 4KB
-document.cookie = 'name=Israel'
+const date = new Date(9999, 0, 1).toUTCString()
+document.cookie = `name=Israel; expires=${date}`
+console.log(document.cookie)
 
 // Session storage 5MB
 // sessionStorage.setItem("Age", "24")
