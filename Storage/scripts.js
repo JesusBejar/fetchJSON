@@ -5,7 +5,11 @@ localStorage.setItem('Name', 'Joe Momma')
 console.log(localStorage.getItem('Name'))
 // Cookies 4KB
 const date = new Date(9999, 0, 1).toUTCString()
+const pastDate = new Date(1999, 0, 1).toUTCString()
 document.cookie = `name=Israel; expires=${date}`
+console.log(document.cookie)
+
+document.cookie = `name=; expires=${pastDate}`
 console.log(document.cookie)
 
 // Session storage 5MB
