@@ -1,0 +1,7 @@
+// documentation fetch, gets one todo
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json))
+
+
+
